@@ -102,5 +102,8 @@ int main(int argc, char **argv){
 	}
 	printf("Verified!\n");
 
+	if(challenge) destroy_por_challenge(challenge);
+	
+
 	return 0;
 }

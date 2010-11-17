@@ -228,6 +228,8 @@ int por_verify_block(char *filepath, size_t filepath_len, unsigned char *block, 
 	printf("Verify: ");
 	printhex(digest, digest_len);
 */
+	if(key) destroy_por_key(key);
+
 	if(ret == 0) return 1;
 	
 cleanup:
