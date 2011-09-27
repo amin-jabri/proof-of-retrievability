@@ -39,6 +39,20 @@
 #include <openssl/sha.h>
 #include <openssl/rand.h>
 
+/* Tagging is "embarrassingly" parallelizable as each tag can be calculated
+ * independenlty.  During tagging, N threads can be spawned, dividing the file
+ * into N sections.  Each thread processes every Nth block of a file */
+#define THREADING
+
+/* TODO: This should probably be set by autoconf based on some proc variables */
+/* The number of threads should be about the number of cores a processor has.
+ * Processing is the bottleneck in tagging, so launching more than the number of
+ * of cores won't achieve much, if any, speedup. */
+#ifdef THREADING
+#define NUM_THREADS 2
+#endif
+
+
 #define POR_PRF_KEY_SIZE SHA_DIGEST_LENGTH /* Size (in bytes) of an HMAC-SHA1 */
 
 #define POR_BLOCK_SIZE 4096

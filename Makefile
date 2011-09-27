@@ -23,4 +23,4 @@ porlib: por-core.o por-misc.o por-keys.o por-file.o
 	ar -rv porlib.a por-misc.o por-keys.o por-file.o
 
 clean:
-	rm -rf *.o por.dSYM por por-s3 *.tag
+	rm -rf *.o por.dSYM por por-s3 *.tag por-s3.dSYM
