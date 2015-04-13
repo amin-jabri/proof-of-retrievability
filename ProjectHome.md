@@ -1,0 +1,1 @@
+This MAC-based POR library allows a client that has stored data at an untrusted server to verify that the server possesses the original data without retrieving the entire file or storing a copy himself.  This scheme is based on message authentication codes (MACs) and requires no server-side computation.
